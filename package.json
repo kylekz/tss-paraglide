@@ -9,7 +9,8 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "i18n": "pnpm dlx @inlang/paraglide-js compile --project ./project.inlang --outdir ./src/i18n"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -43,6 +44,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.2.2",
     "vitest": "^4.0.8",
-    "web-vitals": "^5.1.0"
+    "web-vitals": "^5.1.0",
+    "@inlang/paraglide-js": "2.4.0"
   }
 }

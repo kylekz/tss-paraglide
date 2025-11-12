@@ -13,6 +13,8 @@ import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
+import { getLocale } from '@/i18n/runtime'
+import { songsQuery } from '@/data/demo.punk-songs'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -40,12 +42,16 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
 
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(songsQuery)
+  },
+
   shellComponent: RootDocument,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang={getLocale()}>
       <head>
         <HeadContent />
       </head>
