@@ -3,7 +3,12 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense } from 'react'
 
-export const Route = createFileRoute('/')({ component: App })
+export const Route = createFileRoute('/')({
+  component: App,
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(songsQuery)
+  },
+})
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import { paraglideVitePlugin } from '@inlang/paraglide-js'
+// import { paraglideVitePlugin } from '@inlang/paraglide-js'
 import { defineConfig } from 'vite'
 import { devtools } from '@tanstack/devtools-vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
@@ -9,13 +9,13 @@ import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
   plugins: [
-    paraglideVitePlugin({
-      project: './project.inlang',
-      outdir: './src/i18n',
-      outputStructure: 'message-modules',
-      cookieName: 'PARAGLIDE_LOCALE',
-      strategy: ['cookie', 'preferredLanguage', 'baseLocale'],
-    }),
+    // paraglideVitePlugin({
+    //   project: './project.inlang',
+    //   outdir: './src/i18n',
+    //   outputStructure: 'message-modules',
+    //   cookieName: 'PARAGLIDE_LOCALE',
+    //   strategy: ['cookie', 'preferredLanguage', 'baseLocale'],
+    // }),
     devtools(),
     nitro(),
     // this is the plugin that enables path aliases
